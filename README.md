@@ -17,7 +17,7 @@ Comando para inserir um registro da aplicação: <br>
 $ insere, bolo confeitado, 7, >> <br>
 
 Comando para selecionar um registro da aplicação: <br>
-Simplismente digite algum texto que tem na base de dados <br>
+Simplesmente digite algum texto que tem na base de dados <br>
 $ bolo  <br>
 Que lista todas os registros que têm a palavra 'bolo'<br>
 
