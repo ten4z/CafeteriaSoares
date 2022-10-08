@@ -47,7 +47,7 @@ class dbSetup():
             self.conexao.commit()
             obj['txt_debug']['Text'] = ""
     def atualizarProduto(self, id, nome, tipo, preco):
-        id_sql = "SELECT id_prodt FROM tb_produtos WHERE nome_prodt = ?"
+        id_sql = "SELECT * FROM tb_produtos WHERE id_prodt = ?"
         upd_sql = "UPDATE tb_produtos SET (nome_prodt = ?, tipo_prodt = ?, preco_prodt= ?) WHERE (id_prod = ?)" 
         self.cursor.execute(id_sql, (id,),) 
         data = self.cursor.fetchone()
@@ -55,7 +55,8 @@ class dbSetup():
             obj['txt_status']['Text'] = "linha não encontrada." 
         else:
             id = data[0]
-            self.cursor.execute(upd_sql, (id, nome, tipo, preco),) 
+            self.cursor.execute(upd_sql, (nome, tipo, preco, id),) 
+
             obj['txt_status']['Text'] = "linha removida." 
             obj['txt_comando']['Text'] = "$ "
     def removerProduto(self, id):
@@ -88,7 +89,7 @@ class dbSetup():
         lista_cmd  = []
         if cmd == '' or cmd == '$':
             obj['txt_comando']['Text']= "$ "
-        if 'remove' in cmd and "go" in cmd: 
+        if 'remove' in cmd and ">>" in cmd: 
             print("remover")           
             num = cmd.count(',')           
             if num == 2:
@@ -96,15 +97,18 @@ class dbSetup():
                 self.removerProduto(lista_cmd[1])
                 print("remover por id")
                 obj['txt_status']['Text'] = 'linha removida'
-        if 'atualize' in cmd and "go" in cmd: 
-            print("atualizar")           
+        if 'atualize' in cmd and ">>" in cmd: 
+            #print("atualizar")          
             num = cmd.count(',')           
             if num == 5:
                 lista_cmd = cmd.split(',')  
-                self.atualizarProduto(lista_cmd[1], lista_cmd[2], lista_cmd[3])
+                self.atualizarProduto(lista_cmd[1], lista_cmd[2], lista_cmd[3], lista_cmd[4])
                 print("atualizar por id")  
-                obj['txt_status']['Text'] = 'linha atualizada'       
-        if 'insere' in cmd and "go" in cmd: 
+                obj['txt_status']['Text'] = 'linha atualizada' 
+                print(lista_cmd)
+            else:
+                print("Comando inválido.")      
+        if 'insere' in cmd and ">>" in cmd: 
             num = cmd.count(',')           
             if num == 4: 
                 lista_cmd = cmd.split(',')     
