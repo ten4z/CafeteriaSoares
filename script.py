@@ -74,7 +74,7 @@ class dbSetup():
         txt = obj['txt_comando']['Text']
         txt = txt.replace('$ ', '')
         
-        if len(txt) >= 3 and texto != "clear":
+        if len(txt) >= 3 and texto != "apagar":
             if txt in str(texto):
                 if str(texto) not in obj['txt_debug']['Text']:                
                     obj['txt_debug']['Text'] += str(texto) + '\n'                  
@@ -83,7 +83,7 @@ class dbSetup():
                         obj['txt_debug']['Text'] = ''
     def lerComando(self, cmd): 
         num = 0
-        if cmd == "$ clear" or cmd == "$ reset":
+        if cmd == "$ clear" or cmd == "$ limpar":
             obj['txt_debug']['Text'] = ''        
         lista_cmd  = []
         if cmd == '' or cmd == '$':
