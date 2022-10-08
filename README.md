@@ -7,7 +7,7 @@ Para iniciar a aplicação pressione a tecla <strong>P</strong><br>
 
 Não é difícil você descobrir que pode exportar a aplicação<br>
 para o sistema operacional desktop, seja Windows, Linux ou macOS.<br>
-Assim, Habilite o add interno do UPBGE para exportação do auto executável.<br>
+Assim, Habilite o add-on interno do UPBGE para exportação do auto executável.<br>
 
 Há um campo editável no canto inferior da aplicação.<br>
 Neste campo você pode executar todas as operações do CRUD: "Create, Read, Update e Delete"<br>
@@ -17,7 +17,7 @@ Comando para inserir um registro da aplicação: <br>
 $ insere, bolo confeitado, 7, >> <br>
 
 Comando para selecionar um registro da aplicação: <br>
-Simplismente digito algum texto que tem na base de dados <br>
+Simplismente digite algum texto que tem na base de dados <br>
 $ bolo  <br>
 Que lista todas os registros que têm a palavra 'bolo'<br>
 
