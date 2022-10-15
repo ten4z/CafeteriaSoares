@@ -27,7 +27,7 @@ $ atualize, 1, café com leite, bebida, 6.5, >> <br>
 Comando para excluir um registro da aplicação: <br>
 $ remove, 6, >> <br><br>
 Comando para listar todas as comidas: <br>
-$ comdas<br>
+$ comidas<br>
 Comando para listar todas as bebidas: <br>
 $ bebidas<br>
 Comando para limpar o rótulo de saida:<br>
